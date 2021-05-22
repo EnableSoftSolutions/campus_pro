@@ -1,7 +1,12 @@
 import 'package:campus_pro/src/CONSTANTS/themeData.dart';
-import 'package:campus_pro/src/UI/PAGES/homePage.dart';
+import 'package:campus_pro/src/UI/PAGES/signInPage.dart';
+import 'package:campus_pro/src/UI/PAGES/userType.dart';
 import 'package:campus_pro/src/UTILS/appImages.dart';
+import 'package:campus_pro/src/DATA/userUtils.dart';
 import 'package:flutter/material.dart';
+
+import 'homePage.dart';
+import 'signInPage.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = "/splash-screen";
@@ -12,10 +17,30 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Future.delayed(Duration(seconds: 3)).then((value) =>
-        Navigator.pushNamedAndRemoveUntil(
-            context, HomePage.routeName, (route) => false));
+    checkUserLogin();
     super.initState();
+  }
+
+  checkUserLogin() async {
+    final uid = await UserUtils.idFromCache();
+    final loginToken = await UserUtils.loginTokenFromCache();
+    print("uid $uid");
+    print("loginToken $loginToken");
+    // Future.delayed(Duration(seconds: 3)).then((value) {
+    //   Navigator.pushNamedAndRemoveUntil(
+    //       context, HomePage.routeName, (route) => false);
+    // });
+    Future.delayed(Duration(seconds: 3)).then((value) {
+      if (uid != null && loginToken != null) {
+        print("UserTypeList");
+        Navigator.pushNamedAndRemoveUntil(
+            context, UserType.routeName, (route) => false);
+      } else {
+        print("SignInPage");
+        Navigator.pushNamedAndRemoveUntil(
+            context, SignInPage.routeName, (route) => false);
+      }
+    });
   }
 
   @override

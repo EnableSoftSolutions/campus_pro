@@ -10,3 +10,6 @@ final customGradient = LinearGradient(
       accentColor,
       primaryColor,
     ]);
+
+final Color whiteColor = Color(0xffFFFFFF);
+final Color blueColor = Color(0xff6789C9);

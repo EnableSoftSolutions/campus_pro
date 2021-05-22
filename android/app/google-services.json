@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "762595921773",
+    "project_id": "campusprofl",
+    "storage_bucket": "campusprofl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762595921773:android:7a5c44e54dac77269dd464",
+        "android_client_info": {
+          "package_name": "com.enablesoft_solutions.campus_pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762595921773-pm181tpsusdo4vonjj5oaf25crtk7gmq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDq_6z9r1-6jMTxQDLbHPRkwB3zqt2UIzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762595921773-pm181tpsusdo4vonjj5oaf25crtk7gmq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
